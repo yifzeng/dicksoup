@@ -1,0 +1,220 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Sun Mar 12 15:07:31 2017
+
+@author: Evan
+"""
+import scrapy
+from nalan.items import NalanItem
+import logging
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+import time
+import re
+from random import choice
+from scrapy.conf import settings
+    
+class NalanSpider(scrapy.Spider):
+    name = "nalan"
+    count = 1
+    allowed_domains = ["sogou.com","mp.weixin.qq.com"]
+    settings.overrides['DOWNLOAD_TIMEOUT'] = 5
+    settings.overrides['CONCURRENT_REQUESTS'] = 32
+    f = open("urls.txt",'r')
+#    start_urls = ['http://mp.weixin.qq.com/s?src=3&timestamp=1489825531&ver=1&signature=gTucpmC3hASxHDpyL1BbgwFJrTxekR5kVAxoZtTMOUalEqxezRZgBCIeJivC1KKR2tVrXoEFSasmgc5JN4t3k2JUjMoG831DcRXRTHbPkG8x3WpAXalpV7xl2eJcK3b9JkdT*9cgY7KRiOG5az29qymW**lOkXWN4pPENagsMtQ=']
+    start_urls = [url.strip() for url in f.readlines()]
+    tmpnum = 10000
+    f.close() 
+#    baseurl = 'http://weixin.sogou.com/weixinwap?ie=utf8&s_from=input&type=2&t=1489576665763&pg=webSearchList&_sug_=n&_sug_type_=&query='
+#    queryword = '纳兰皮条会第|'
+#    options = webdriver.ChromeOptions()
+#    mobileEmulation = {'deviceName': 'Apple iPhone 6'}
+#    options.add_experimental_option('mobileEmulation', mobileEmulation)
+#    driver = webdriver.Chrome(chrome_options=options)     
+#    baseurl = 'http://weixin.sogou.com/weixinwap?ie=utf8&s_from=input&type=2&t=1489576665763&pg=webSearchList&_sug_=n&_sug_type_=&query='
+#    queryword1 = '纳兰皮条会第'
+#    queryword2 = '发'
+#    def start_requests(self):
+#        while self.count >205:           
+#            url = self.baseurl+self.queryword1+str(self.count)+self.queryword2
+#            logging.info('---搜狗搜索第'+str(self.count)+'发链接---'+url)
+#            self.count = self.count - 1
+#            sgheader = {'Accept':['application/json'],
+#                    'Accept-Encoding':['gzip, deflate, sdch'],
+#                    'Accept-Language':['zh-CN,zh;q=0.8,en;q=0.6,zh-TW;q=0.4,ja;q=0.2'],
+#                    'Connection':['keep-alive'],
+#                    'Cookie':['SUV=0048178A7144F73C58C548F37176C591; ABTEST=0|1489324292|v1; SNUID=4D86360071743BF924141B9C722D204B; IPLOC=CN4401; SUID=3CF74471771A910A0000000058C54904; SUID=3CF744713220910A0000000058C54AE9; weixinIndexVisited=1; sct=3; SUIR=4D86360071743BF924141B9C722D204B; ld=Xetn4lllll2YeUrclllllV04Da7llllltUFT5lllll9lllllRklll5@@@@@@@@@@; gpsloc=%E5%B9%BF%E4%B8%9C%E7%9C%81%09%E5%B9%BF%E5%B7%9E%E5%B8%82; sgid=30-27037745-AVjHibibuQhYDX3Tvxs6AELa8; usid=fTCCUletTYtNDtFt; wuid=AAF2Ac6DFwAAAAqRGnm+2gcA1wA=; JSESSIONID=aaaYzkqveZatIh9cpuoQv'],
+#                    'DNT':['1'],
+#                    'Host':['weixin.sogou.com'],
+#                    'Referer':[url],
+#                    'User-Agent':['Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1'],
+#                    'X-Requested-With':['XMLHttpRequest ']}
+#
+#            yield scrapy.Request(url, callback=self.parse, headers=sgheader) 
+#    def start_requests(self):
+#        non_decimal = re.compile(r'[^\d]+')        
+#        driver = self.driver
+#        driver.get(self.baseurl) 
+#        element = driver.find_element_by_id('loginOrOut')
+#        element.click()
+#        element = driver.find_element_by_id('login')
+#        element.click()
+#        time.sleep(2)
+#        driver.find_element_by_id('u').clear()
+#        driver.find_element_by_id('u').send_keys('124601509')
+#        driver.find_element_by_id('p').clear()
+#        driver.find_element_by_id('p').send_keys('zyfzengyi223833')
+#        driver.find_element_by_id('go').click()
+#        time.sleep(2)
+#        element = driver.find_element_by_id('query')
+#        element.clear()
+#        element.send_keys(self.queryword)
+#        element.submit()
+#        ele = driver.find_element_by_id('mainBody')
+#        tmp=1
+#        while '351-360' not in ele.text:
+#            tmp = tmp + 1
+##            if(tmp > 60):
+##                break
+#            element = driver.find_element_by_id('next_page')        
+#            element.click()
+#            ele = driver.find_element_by_id('mainBody')
+#            print("--------点击下一页--------")
+##            time.sleep(choice([1,2,3]))
+#            if( '351-360'  in ele.text):
+#                print('已经点完')
+#                break
+##        for link in driver.find_elements_by_tag_name("a"): 
+#        for link in driver.find_elements(By.XPATH, "//h4/a"):
+#            if('纳兰皮条会|第' in link.text):
+#                print("获取到文章--["+link.text+"]--的链接")                
+#                if(int(non_decimal.sub('',link.text))>205):
+#                    print("........开始爬取........"+non_decimal.sub('',link.text))
+#                    url = link.get_attribute("href")
+#                    newheaders = {'Accept':['*/*'],
+#                    'Accept-Encoding':['gzip, deflate'],
+#                    'Accept-Language':['zh-CN,zh;q=0.8,en;q=0.6,zh-TW;q=0.4,ja;q=0.2'],
+#                    'Connection':['keep-alive'],
+#                    'Content-Length':['60'],
+#                    'Content-Type':['application/x-www-form-urlencoded; charset=UTF-8'],
+#                    'Cookie':['pgv_pvi=6817641472; _ga=GA1.2.1138012894.1489584739; RK=wfUbyyOPfm; idt=1489666767; pgv_si=s571698176; _qpsvr_localtk=0.8258039937756663; ptui_loginuin=124601509; ptisp=ctc; ptcz=eec19b5fbf2b7f01aa051ce30c65a0402f0701704ae903a600feec65ccc9e87f; pt2gguin=o0124601509; uin=o0124601509; skey=@JP44wTjCK'],
+#                    'DNT':['1'],
+#                    'Host':['mp.weixin.qq.com'],
+#                    'Origin':['http://mp.weixin.qq.com'],
+#                    'Referer':[url],
+#                    'User-Agent':['Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1'],
+#                    'X-Requested-With':['XMLHttpRequest']}
+#                    yield scrapy.Request(url, callback=self.parse)#,headers=newheaders)  
+#                else:
+#                    pass
+            
+    def parse(self,response):
+        print("第"+str(self.count)+"个爬虫开始")
+        self.count = self.count + 1
+        #targeturl = response.xpath('//h4/a[contains(.,"第'+str(self.count)+'发")]/@href').extract_first() 
+#        targeturl = response.xpath('//li[contains(@id,"box_0")]/div/h4/a/@href').extract_first() 
+#
+#        f = open('url.txt','a')
+#        f.write(targeturl+'\n')
+#        f.close()
+#        
+#        logging.info('获取到weixin文章链接---'+targeturl)  
+#        
+#        yield scrapy.Request(targeturl, callback=self.parse_data)#, headers=newheaders) 
+#    
+#            
+#
+#    def parse_data1(self, response):
+        title = response.xpath('string(//*[@id="activity-name"])').extract_first().replace('\n','').replace('\r','').strip()
+        postdate = response.xpath('string(//*[@id="post-date"])').extract_first().strip()
+        print(title) 
+        
+        if(title.find("男生场")!=-1):             
+            gender = "male"
+        else:
+            gender = "female"
+        i = len(response.xpath('//img/@data-src').extract()) - 4
+        if(gender == "female"):
+            i = i - 15
+        else:
+            i = i - 10
+        for sel in response.xpath('//*[@id="js_content"]/section/section[section/section[not(contains(.,"dicksoup"))]]'):
+            item = NalanItem()            
+            item['volume'] = title
+            item['postdate'] = postdate
+            item['gender'] = gender
+            dec = sel.xpath('string(.)').extract_first()
+            
+            pos = dec.find('—')
+            if(pos!=-1):
+                item['idnum'] = dec[0:pos]
+            else:
+                self.tmpnum = self.tmpnum-1
+                item['idnum'] = str(self.tmpnum)
+            
+            pos1 = dec.find('城市')
+            if(pos1!=-1):
+                if(dec[pos1+2]==":" or dec[pos1+2]=="："):
+                    tmp = dec[pos1+3:]
+                    logging.info('1111111---'+tmp)
+                    pos2 = tmp.find('职业')
+                    if(pos2==-1):
+                        pos2 = tmp.find(' ')
+                        if(pos2==-1):
+                            pos2 = tmp.find(' ')
+                    item['city'] = tmp[0:pos2]
+                else:
+                    tmp = dec[pos1+2:].lstrip()
+                    logging.info('2222222---'+tmp)
+                    pos2 = tmp.find('职业')
+                    if(pos2==-1):
+                        pos2 = tmp.find(' ')
+                        if(pos2==-1):
+                            pos2 = tmp.find(' ')
+                    item['city'] = tmp[0:pos2]
+            elif(dec.find('坐标')!=-1):
+                pos1 = dec.find('坐标')
+                if(dec[pos1+2]==":" or dec[pos1+2]=="："):
+                    tmp = dec[pos1+2:]
+                    logging.info('33333333---'+tmp)
+                    pos2 = tmp.find('职业')
+                    if(pos2==-1):
+                        pos2 = tmp.find(' ')
+                        if(pos2==-1):
+                            pos2 = tmp.find(' ')
+                    item['city'] = tmp[0:pos2]
+                else:
+                    tmp = dec[pos1+2:].lstrip()
+                    logging.info('44444444---'+tmp)
+                    pos2 = tmp.find('职业')
+                    if(pos2==-1):
+                        pos2 = tmp.find(' ')
+                        if(pos2==-1):
+                            pos2 = tmp.find(' ')
+                    item['city'] = tmp[0:pos2]
+            
+            
+                
+                
+            item['dec'] = dec   
+            item['image_urls'] = [response.xpath('//img/@data-src').extract()[i]]         
+                
+#            item['idnum'] = sel.xpath('string(.//p[not(contains(.,"请把这个号"))][1])').extract_first()            
+#            item['gender'] = gender
+#            item['wechat'] = sel.xpath('string(.//p[not(contains(.,"请把这个号"))][2])').extract_first()
+#            item['age'] = sel.xpath('string(.//p[not(contains(.,"请把这个号"))][3])').extract_first()
+#            item['heigh'] = sel.xpath('string(.//p[not(contains(.,"请把这个号"))][4])').extract_first()
+#            item['city'] = sel.xpath('string(.//p[not(contains(.,"请把这个号"))][5])').extract_first()
+                              
+            i=i+1           
+            
+#            if(item['wechat'] ==''):                
+#                item['idnum'] = sel.xpath('string(.//section/section[contains(@style,"font-size:")]/section[1])').extract_first()            
+#                item['wechat'] = sel.xpath('string(.//section/section[contains(@style,"font-size:")]/section[2])').extract_first()
+#                item['age'] = sel.xpath('string(.//section/section[contains(@style,"font-size:")]/section[3])').extract_first()
+#                item['heigh'] = sel.xpath('string(.//section/section[contains(@style,"font-size:")]/section[4])').extract_first()
+#                item['city'] = sel.xpath('string(.//section/section[contains(@style,"font-size:")]/section[5])').extract_first()
+#                item['dec'] = sel.xpath('string(.)').extract_first()
+#                logging.info(item)
+            yield item
+         

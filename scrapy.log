@@ -1,0 +1,570 @@
+2017-07-16 02:33:47 [scrapy.utils.log] INFO: Scrapy 1.3.2 started (bot: nalan)
+2017-07-16 02:33:47 [scrapy.utils.log] INFO: Overridden settings: {'BOT_NAME': 'nalan', 'CONCURRENT_REQUESTS': 1, 'COOKIES_ENABLED': False, 'DOWNLOAD_DELAY': 1, 'DOWNLOAD_TIMEOUT': 5, 'LOG_FILE': 'scrapy.log', 'LOG_LEVEL': 'INFO', 'NEWSPIDER_MODULE': 'nalan.spiders', 'SPIDER_MODULES': ['nalan.spiders']}
+2017-07-16 02:33:47 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats']
+2017-07-16 02:33:47 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['nalan.middlewares.RandomUserAgent',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2017-07-16 02:33:47 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2017-07-16 02:33:47 [scrapy.middleware] INFO: Enabled item pipelines:
+['nalan.pipelines.NalanPipeline',
+ 'nalan.pipelines.DuplicatesPipeline',
+ 'nalan.pipelines.JsonWriterPipeline',
+ 'nalan.pipelines.personImagePipeline']
+2017-07-16 02:33:47 [scrapy.core.engine] INFO: Spider opened
+2017-07-16 02:33:47 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2017-07-16 02:33:48 [root] INFO: 9999
+2017-07-16 02:33:48 [scrapy.core.scraper] ERROR: Error processing {'dec': '',
+ 'gender': 'male',
+ 'idnum': '9999',
+ 'image_urls': ['http://mmbiz.qpic.cn/mmbiz_jpg/ZnR0FD7Bn9gSfSvGyJKafcdCmUuztsia8CHia8lgkp2hahicRvtGhrwviaeNVYK07CIeLQPXNWM8NpwtLZLgRhyOPg/0?wx_fmt=jpeg'],
+ 'postdate': '2016-11-13',
+ 'volume': '纳兰皮条会｜第331发｜周日男生场'}
+Traceback (most recent call last):
+  File "c:\programdata\anaconda3\lib\site-packages\twisted\internet\defer.py", line 653, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "D:\nalan\nalan\pipelines.py", line 33, in process_item
+    if(item['city'].replace(' ', '').replace('\n','').replace('：','').replace(':','')!=''):
+  File "c:\programdata\anaconda3\lib\site-packages\scrapy\item.py", line 59, in __getitem__
+    return self._values[key]
+KeyError: 'city'
+2017-07-16 02:33:48 [scrapy.core.engine] INFO: Closing spider (finished)
+2017-07-16 02:33:48 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 533,
+ 'downloader/request_count': 1,
+ 'downloader/request_method_count/GET': 1,
+ 'downloader/response_bytes': 22832,
+ 'downloader/response_count': 1,
+ 'downloader/response_status_count/200': 1,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2017, 7, 15, 18, 33, 48, 278810),
+ 'log_count/ERROR': 1,
+ 'log_count/INFO': 8,
+ 'response_received_count': 1,
+ 'scheduler/dequeued': 1,
+ 'scheduler/dequeued/memory': 1,
+ 'scheduler/enqueued': 1,
+ 'scheduler/enqueued/memory': 1,
+ 'start_time': datetime.datetime(2017, 7, 15, 18, 33, 47, 950217)}
+2017-07-16 02:33:48 [scrapy.core.engine] INFO: Spider closed (finished)
+2017-07-16 02:34:26 [scrapy.utils.log] INFO: Scrapy 1.3.2 started (bot: nalan)
+2017-07-16 02:34:26 [scrapy.utils.log] INFO: Overridden settings: {'BOT_NAME': 'nalan', 'CONCURRENT_REQUESTS': 1, 'COOKIES_ENABLED': False, 'DOWNLOAD_DELAY': 1, 'DOWNLOAD_TIMEOUT': 5, 'LOG_FILE': 'scrapy.log', 'LOG_LEVEL': 'INFO', 'NEWSPIDER_MODULE': 'nalan.spiders', 'SPIDER_MODULES': ['nalan.spiders']}
+2017-07-16 02:34:26 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats']
+2017-07-16 02:34:26 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['nalan.middlewares.RandomUserAgent',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2017-07-16 02:34:26 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2017-07-16 02:34:26 [scrapy.middleware] INFO: Enabled item pipelines:
+['nalan.pipelines.NalanPipeline',
+ 'nalan.pipelines.DuplicatesPipeline',
+ 'nalan.pipelines.JsonWriterPipeline',
+ 'nalan.pipelines.personImagePipeline']
+2017-07-16 02:34:26 [scrapy.core.engine] INFO: Spider opened
+2017-07-16 02:34:26 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2017-07-16 02:34:27 [root] INFO: 9999
+2017-07-16 02:34:27 [scrapy.core.scraper] ERROR: Error processing {'dec': '',
+ 'gender': 'male',
+ 'idnum': '9999',
+ 'image_urls': ['http://mmbiz.qpic.cn/mmbiz_jpg/ZnR0FD7Bn9gSfSvGyJKafcdCmUuztsia8mqhzibSxicwHPwiaqK2nictStL5JZVVxwNOQJXLZibnOdc5sDjkoEOTplMw/0?wx_fmt=jpeg'],
+ 'postdate': '2016-11-13',
+ 'volume': '纳兰皮条会｜第331发｜周日男生场'}
+Traceback (most recent call last):
+  File "c:\programdata\anaconda3\lib\site-packages\twisted\internet\defer.py", line 653, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "D:\nalan\nalan\pipelines.py", line 33, in process_item
+    if(item['city'].replace(' ', '').replace('\n','').replace('：','').replace(':','')!=''):
+  File "c:\programdata\anaconda3\lib\site-packages\scrapy\item.py", line 59, in __getitem__
+    return self._values[key]
+KeyError: 'city'
+2017-07-16 02:34:27 [scrapy.core.engine] INFO: Closing spider (finished)
+2017-07-16 02:34:27 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 531,
+ 'downloader/request_count': 1,
+ 'downloader/request_method_count/GET': 1,
+ 'downloader/response_bytes': 22630,
+ 'downloader/response_count': 1,
+ 'downloader/response_status_count/200': 1,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2017, 7, 15, 18, 34, 27, 327733),
+ 'log_count/ERROR': 1,
+ 'log_count/INFO': 8,
+ 'response_received_count': 1,
+ 'scheduler/dequeued': 1,
+ 'scheduler/dequeued/memory': 1,
+ 'scheduler/enqueued': 1,
+ 'scheduler/enqueued/memory': 1,
+ 'start_time': datetime.datetime(2017, 7, 15, 18, 34, 26, 987786)}
+2017-07-16 02:34:27 [scrapy.core.engine] INFO: Spider closed (finished)
+2017-07-16 02:35:34 [scrapy.utils.log] INFO: Scrapy 1.3.2 started (bot: nalan)
+2017-07-16 02:35:34 [scrapy.utils.log] INFO: Overridden settings: {'BOT_NAME': 'nalan', 'CONCURRENT_REQUESTS': 1, 'COOKIES_ENABLED': False, 'DOWNLOAD_DELAY': 1, 'DOWNLOAD_TIMEOUT': 5, 'LOG_FILE': 'scrapy.log', 'LOG_LEVEL': 'INFO', 'NEWSPIDER_MODULE': 'nalan.spiders', 'SPIDER_MODULES': ['nalan.spiders']}
+2017-07-16 02:35:34 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats']
+2017-07-16 02:35:35 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['nalan.middlewares.RandomUserAgent',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2017-07-16 02:35:35 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2017-07-16 02:35:35 [scrapy.middleware] INFO: Enabled item pipelines:
+['nalan.pipelines.NalanPipeline',
+ 'nalan.pipelines.DuplicatesPipeline',
+ 'nalan.pipelines.JsonWriterPipeline',
+ 'nalan.pipelines.personImagePipeline']
+2017-07-16 02:35:35 [scrapy.core.engine] INFO: Spider opened
+2017-07-16 02:35:35 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2017-07-16 02:35:35 [root] INFO: 9999
+2017-07-16 02:35:35 [scrapy.core.scraper] ERROR: Error processing {'dec': '',
+ 'gender': 'male',
+ 'idnum': '9999',
+ 'image_urls': ['http://mmbiz.qpic.cn/mmbiz_jpg/ZnR0FD7Bn9gSfSvGyJKafcdCmUuztsia8mqhzibSxicwHPwiaqK2nictStL5JZVVxwNOQJXLZibnOdc5sDjkoEOTplMw/0?wx_fmt=jpeg'],
+ 'postdate': '2016-11-13',
+ 'volume': '纳兰皮条会｜第331发｜周日男生场'}
+Traceback (most recent call last):
+  File "c:\programdata\anaconda3\lib\site-packages\twisted\internet\defer.py", line 653, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "D:\nalan\nalan\pipelines.py", line 33, in process_item
+    if(item['city'].replace(' ', '').replace('\n','').replace('：','').replace(':','')!=''):
+  File "c:\programdata\anaconda3\lib\site-packages\scrapy\item.py", line 59, in __getitem__
+    return self._values[key]
+KeyError: 'city'
+2017-07-16 02:35:35 [scrapy.core.engine] INFO: Closing spider (finished)
+2017-07-16 02:35:35 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 531,
+ 'downloader/request_count': 1,
+ 'downloader/request_method_count/GET': 1,
+ 'downloader/response_bytes': 22633,
+ 'downloader/response_count': 1,
+ 'downloader/response_status_count/200': 1,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2017, 7, 15, 18, 35, 35, 415905),
+ 'log_count/ERROR': 1,
+ 'log_count/INFO': 8,
+ 'response_received_count': 1,
+ 'scheduler/dequeued': 1,
+ 'scheduler/dequeued/memory': 1,
+ 'scheduler/enqueued': 1,
+ 'scheduler/enqueued/memory': 1,
+ 'start_time': datetime.datetime(2017, 7, 15, 18, 35, 35, 94195)}
+2017-07-16 02:35:35 [scrapy.core.engine] INFO: Spider closed (finished)
+2017-07-16 02:36:43 [scrapy.utils.log] INFO: Scrapy 1.3.2 started (bot: nalan)
+2017-07-16 02:36:43 [scrapy.utils.log] INFO: Overridden settings: {'BOT_NAME': 'nalan', 'CONCURRENT_REQUESTS': 1, 'COOKIES_ENABLED': False, 'DOWNLOAD_DELAY': 1, 'DOWNLOAD_TIMEOUT': 5, 'LOG_FILE': 'scrapy.log', 'LOG_LEVEL': 'INFO', 'NEWSPIDER_MODULE': 'nalan.spiders', 'SPIDER_MODULES': ['nalan.spiders']}
+2017-07-16 02:36:43 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats']
+2017-07-16 02:36:43 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['nalan.middlewares.RandomUserAgent',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2017-07-16 02:36:43 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2017-07-16 02:36:43 [scrapy.middleware] INFO: Enabled item pipelines:
+['nalan.pipelines.NalanPipeline',
+ 'nalan.pipelines.DuplicatesPipeline',
+ 'nalan.pipelines.JsonWriterPipeline',
+ 'nalan.pipelines.personImagePipeline']
+2017-07-16 02:36:43 [scrapy.core.engine] INFO: Spider opened
+2017-07-16 02:36:43 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2017-07-16 02:36:43 [root] INFO: 9999
+2017-07-16 02:36:43 [scrapy.core.scraper] ERROR: Error processing {'dec': '',
+ 'gender': 'male',
+ 'idnum': '9999',
+ 'image_urls': ['http://mmbiz.qpic.cn/mmbiz_jpg/ZnR0FD7Bn9gSfSvGyJKafcdCmUuztsia8mqhzibSxicwHPwiaqK2nictStL5JZVVxwNOQJXLZibnOdc5sDjkoEOTplMw/0?wx_fmt=jpeg'],
+ 'postdate': '2016-11-13',
+ 'volume': '纳兰皮条会｜第331发｜周日男生场'}
+Traceback (most recent call last):
+  File "c:\programdata\anaconda3\lib\site-packages\twisted\internet\defer.py", line 653, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "D:\nalan\nalan\pipelines.py", line 33, in process_item
+    if(item['city'].replace(' ', '').replace('\n','').replace('：','').replace(':','')!=''):
+  File "c:\programdata\anaconda3\lib\site-packages\scrapy\item.py", line 59, in __getitem__
+    return self._values[key]
+KeyError: 'city'
+2017-07-16 02:36:43 [scrapy.core.engine] INFO: Closing spider (finished)
+2017-07-16 02:36:43 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 531,
+ 'downloader/request_count': 1,
+ 'downloader/request_method_count/GET': 1,
+ 'downloader/response_bytes': 22634,
+ 'downloader/response_count': 1,
+ 'downloader/response_status_count/200': 1,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2017, 7, 15, 18, 36, 43, 634278),
+ 'log_count/ERROR': 1,
+ 'log_count/INFO': 8,
+ 'response_received_count': 1,
+ 'scheduler/dequeued': 1,
+ 'scheduler/dequeued/memory': 1,
+ 'scheduler/enqueued': 1,
+ 'scheduler/enqueued/memory': 1,
+ 'start_time': datetime.datetime(2017, 7, 15, 18, 36, 43, 293739)}
+2017-07-16 02:36:43 [scrapy.core.engine] INFO: Spider closed (finished)
+2017-07-16 02:44:36 [scrapy.utils.log] INFO: Scrapy 1.3.2 started (bot: nalan)
+2017-07-16 02:44:36 [scrapy.utils.log] INFO: Overridden settings: {'BOT_NAME': 'nalan', 'CONCURRENT_REQUESTS': 1, 'COOKIES_ENABLED': False, 'DOWNLOAD_DELAY': 1, 'DOWNLOAD_TIMEOUT': 5, 'LOG_FILE': 'scrapy.log', 'LOG_LEVEL': 'INFO', 'NEWSPIDER_MODULE': 'nalan.spiders', 'SPIDER_MODULES': ['nalan.spiders']}
+2017-07-16 02:44:36 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats']
+2017-07-16 02:44:36 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['nalan.middlewares.RandomUserAgent',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2017-07-16 02:44:36 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2017-07-16 02:44:36 [scrapy.middleware] INFO: Enabled item pipelines:
+['nalan.pipelines.NalanPipeline',
+ 'nalan.pipelines.DuplicatesPipeline',
+ 'nalan.pipelines.JsonWriterPipeline',
+ 'nalan.pipelines.personImagePipeline']
+2017-07-16 02:44:36 [scrapy.core.engine] INFO: Spider opened
+2017-07-16 02:44:36 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2017-07-16 02:44:37 [root] INFO: 1111111---北京职业：金融 外资银行兴趣爱好：唱歌 美食 运动求偶要求：1年龄》25，2身高178以上 3 至少本科学历 4 阳光开朗的性格 热爱生活 享受生活 5 积极向上 三观端正 6 海归加分 自我介绍：性格活泼开朗 英国海归 文艺清新 热爱生活 热爱美食 热爱一切美好的事物 善良单纯无公害 喜欢运动
+2017-07-16 02:44:37 [root] INFO: 2276
+2017-07-16 02:44:37 [root] INFO: 1111111---湖南长沙 职业：在大学教偏门专业 兴趣爱好：音乐 科幻 话剧 读书 旅行 求偶要求：open-minded 正直善良有担当 身高175+ 五官端正 有爱好 有幽默感 有独立思想（如果你懂很多我会崇拜你） 定期运动/健身 有阅读习惯 热爱生活也热爱工作 喜爱赚钱但不只喜爱赚钱 自我介绍：美归硕士，在美国NGO工作一年后回国执教。爱知识爱科学（虽然我是文科女）。从小有强烈的同情心所以选择了助人职业（心理学&社工）。对一切有趣的美的事物都有好奇心。喜欢旅游（从东南亚到中美洲都留下了足迹）
+2017-07-16 02:44:37 [root] INFO: 2277
+2017-07-16 02:44:37 [root] INFO: 1111111---北京（老家黑龙江） 职业：展示设计 兴趣爱好：看书，听歌，画画，看电影，淘宝 求偶要求：长的别太丑，个头别太矮，工作稳定，上进，同城，有意思的人。 自我介绍：不丑，性格稳定（偶尔咋咋唬唬神经质，但是别怕，不严重）有点洁癖。
+2017-07-16 02:44:37 [root] INFO: 2278
+2017-07-16 02:44:37 [root] INFO: 1111111---深圳 职业：项目管理 兴趣爱好：看书，爬山，看电影 求偶要求：身高173cm以上，学历本科及以上，有一定的耐心，明事理，没有暴力倾向。 自我介绍：迷糊型的人，经常丢三落四，特别爱说话，有点天真。如果你可以接受这样的我，请告诉我吧。
+2017-07-16 02:44:37 [root] INFO: 2279
+2017-07-16 02:44:37 [root] INFO: 1111111---北京 职业：某研究院咨询顾问 兴趣爱好：音乐、旅行、看书、游泳、知乎 求偶要求：本科学历以上（最好有海外留学经历），踏实、靠谱、有责任心的乐观男青年 自我介绍：善良乐观、三观正的妹纸一枚；有点崇洋媚外，但绝对根正苗红；朝九晚六的生活缺少一个男神（经）~
+2017-07-16 02:44:37 [root] INFO: 2280
+2017-07-16 02:44:37 [root] INFO: 1111111---杭州 职业：网页视觉设计师 兴趣爱好：旅行 电影 手工 睡觉 酒球会（一个小型演出的地儿） 求偶要求：咱实诚点同城或长期留杭的南方人。身高182以下。脾气好。爱猫。有趣的人。会做饭加分。胡子多加分。喜欢小肌肉微胖也没问题希望是三观相符志趣相投热爱生活的逗比稳重青年 自我介绍：大狮子。逗比。奇特（没错！）。吃货。无节操。粘人。靠谱。吃软不吃硬。喜欢旅行。热爱生活。爱猫。爱电影。爱周末一起吃喝玩乐在沙发上睡大觉。爱你。
+2017-07-16 02:44:37 [root] INFO: 2281
+2017-07-16 02:44:37 [root] INFO: 1111111---深圳 身高：160 城市：深圳 职业：教师 兴趣爱好：旅行、摄影、画画、看话剧、美食 求偶要求：聊得来，正能量积极向上一点，有责任感，有结婚计划。 关于我：关于外形，还算端正，个子不高，也不瘦，喜欢瘦子的就不要找我哈！外向喜欢和朋友在一起，也喜欢二人世界；有趣跟朋友在一起的时候会是那个比较活跃的人，算是一个轻松的人；对不做作的气质型有追求； 内心火热无论对人还是对事，总是属于热情型的，偶尔会落寞忧伤一下，那是小宇宙在充电。很容易被鼓励；喜欢猫和狗。 PS，善良的人都会万福的，祝福所有单身的朋友早得良缘，也请不以结婚为目的的交友者绕道。谢谢！
+2017-07-16 02:44:37 [root] INFO: 2282
+2017-07-16 02:44:37 [root] INFO: 1111111---悉尼（上海人） 职业：全职留学中（硕士） 兴趣爱好：健身，徒步，喝咖啡 求偶要求：在澳洲或者上海，175+，成熟稳重，最好也喜欢运动，走心，不将就。 自我介绍：目前在悉尼读硕士，今年毕业，之后可能回国或者留在澳洲（部分取决于我的Mr.Right 在哪里出现）。性格比较独立，典型双鱼座，不作，比较慢热，相信爱情是两个灵魂互相吸引。
+2017-07-16 02:44:37 [root] INFO: 2283
+2017-07-16 02:44:37 [root] INFO: 1111111---武汉 职业：学校行政 兴趣爱好：追剧 旅游 音乐 游戏 求偶要求：不矮不瘦聊得来 自我介绍：熟了很好聊，属于…交个朋友也不错的那种.
+2017-07-16 02:44:37 [root] INFO: 2284
+2017-07-16 02:44:37 [root] INFO: 1111111---西安职业：私企品牌管理中心经理兴趣爱好：瑜伽、看书、旅游、听歌、睡觉 求偶要求：身高175以上，久居西安有固定工作，有房无按揭，车可以不强求，父母健在家庭完整，无大男子主义，尊重我的工作、朋友，理解我。有孝心、爱心、责任心。离异无孩子可考虑。自我介绍：我是一个独立自主的女人，有稳定工作，有爱心，孝心，爱家，乐观积极，希望能遇到自己的另一半，计划一年半之内结婚。
+2017-07-16 02:44:37 [root] INFO: 2285
+2017-07-16 02:44:37 [root] INFO: 1111111---上海 职业：销售 兴趣爱好：烹饪，手工，健身，摄影，追剧。 求偶要求：同城，风趣幽默，三观正，不大男子主义。医生加分。 自我介绍：自认为是个有趣且温柔的人。
+2017-07-16 02:44:37 [root] INFO: 2286
+2017-07-16 02:44:37 [root] INFO: 1111111---天津或北京 职业：实习会计 兴趣爱好：电影 睡觉 吃东西 听音乐 求偶要求：天津北京的纯汉子 然后最好在175以上哦 身高很重要因为喜欢被保护的感觉 要成熟稳重 25岁以上 32岁以下 微颜控吧 但是感觉很重要感觉很重要感觉很重要 重要的事情要说三遍 自我介绍：东北的女汉子一枚 虽然汉子 但是有一颗热腾腾的少女心 妈妈说了 本命年之前要把婚结了 所以 单身两年啦 沉淀的也差不多了 虽然岁数小 但是自我感觉很稳重了 所以 如果我和你的眼缘 刚好你也对我的口味 那就在一起吧
+2017-07-16 02:44:37 [root] INFO: 2287
+2017-07-16 02:44:37 [root] INFO: 1111111---成都 职业：公司职员 兴趣爱好：旅游、电影迷 求偶要求：man一点有担当的男生，175+，幽默，稳定工作，本人虽然有点轻微外貌协会，但是有共同话题聊得来才是最重要. 自我介绍：我是典型的白羊座吧，爱恨分明，并且也有冒险精神，虽然我人不大，但是心大呀，喜欢尝试新鲜事物，所以希望你也是一个热爱生活的人啦.
+2017-07-16 02:44:37 [root] INFO: 2288
+2017-07-16 02:44:37 [root] INFO: 1111111---上海 职业：总监助理 兴趣爱好：旅行，发呆，电影中度爱好者，喜欢尝试各种运动 求偶要求：希望你是上海人，以结婚为目的哦轻微外貌协会，最重要的是三观一致，三观一致，三观一致！ 自我介绍：典型上海双子女生，爱笑爱玩，略略文青，不熟悉的人都觉得我温柔可爱亲切善良，熟悉的人才知道我调皮妩媚骄傲霸道，能hold住么？
+2017-07-16 02:44:37 [root] INFO: 2289
+2017-07-16 02:44:37 [root] INFO: 1111111---乌鲁木齐 职业：活动策划 兴趣爱好：睡觉 电影 吃 看NBA 求偶要求：脾气好有一定经济能力（想结婚的） 有事业心 比我高 比我大 玩LOL不能沉迷到与世隔绝的地步 有责任感 同城 （不接受异地恋） 自我介绍：梦想是做导演 性格直帅感性 有很强的上进心 慢热 喜欢吃 同情心泛滥 有点任性
+2017-07-16 02:44:37 [root] INFO: 2290
+2017-07-16 02:44:37 [root] INFO: 9999
+2017-07-16 02:44:37 [scrapy.core.scraper] ERROR: Error processing {'dec': '',
+ 'gender': 'female',
+ 'idnum': '9999',
+ 'image_urls': ['http://mmbiz.qpic.cn/mmbiz/ZnR0FD7Bn9jRcwIzgGUF4zy5rwiciccBTRibIP3vV2SShvIYicz94zI6LfwXwBQpia4cKRSDMmAm4FwmNj4MI3JAolQ/0?wx_fmt=jpeg'],
+ 'postdate': '2016-02-26',
+ 'volume': '纳兰皮条会｜第231发｜周五女生场'}
+Traceback (most recent call last):
+  File "c:\programdata\anaconda3\lib\site-packages\twisted\internet\defer.py", line 653, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "D:\nalan\nalan\pipelines.py", line 33, in process_item
+    if(item['city'].replace(' ', '').replace('\n','').replace('：','').replace(':','')!=''):
+  File "c:\programdata\anaconda3\lib\site-packages\scrapy\item.py", line 59, in __getitem__
+    return self._values[key]
+KeyError: 'city'
+2017-07-16 02:44:53 [scrapy.core.engine] INFO: Closing spider (finished)
+2017-07-16 02:44:53 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 6851,
+ 'downloader/request_count': 16,
+ 'downloader/request_method_count/GET': 16,
+ 'downloader/response_bytes': 815460,
+ 'downloader/response_count': 16,
+ 'downloader/response_status_count/200': 16,
+ 'file_count': 15,
+ 'file_status_count/downloaded': 15,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2017, 7, 15, 18, 44, 53, 730525),
+ 'item_scraped_count': 15,
+ 'log_count/ERROR': 1,
+ 'log_count/INFO': 38,
+ 'response_received_count': 16,
+ 'scheduler/dequeued': 1,
+ 'scheduler/dequeued/memory': 1,
+ 'scheduler/enqueued': 1,
+ 'scheduler/enqueued/memory': 1,
+ 'start_time': datetime.datetime(2017, 7, 15, 18, 44, 36, 822539)}
+2017-07-16 02:44:53 [scrapy.core.engine] INFO: Spider closed (finished)
+2017-07-16 02:59:50 [scrapy.utils.log] INFO: Scrapy 1.3.2 started (bot: nalan)
+2017-07-16 02:59:50 [scrapy.utils.log] INFO: Overridden settings: {'BOT_NAME': 'nalan', 'CONCURRENT_REQUESTS': 1, 'COOKIES_ENABLED': False, 'DOWNLOAD_DELAY': 1, 'DOWNLOAD_TIMEOUT': 5, 'LOG_FILE': 'scrapy.log', 'LOG_LEVEL': 'INFO', 'NEWSPIDER_MODULE': 'nalan.spiders', 'SPIDER_MODULES': ['nalan.spiders']}
+2017-07-16 02:59:50 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats']
+2017-07-16 02:59:50 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['nalan.middlewares.RandomUserAgent',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2017-07-16 02:59:50 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2017-07-16 02:59:50 [scrapy.middleware] INFO: Enabled item pipelines:
+['nalan.pipelines.NalanPipeline',
+ 'nalan.pipelines.DuplicatesPipeline',
+ 'nalan.pipelines.JsonWriterPipeline',
+ 'nalan.pipelines.personImagePipeline']
+2017-07-16 02:59:50 [scrapy.core.engine] INFO: Spider opened
+2017-07-16 02:59:50 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2017-07-16 02:59:50 [root] INFO: 9999
+2017-07-16 02:59:50 [scrapy.core.scraper] ERROR: Error processing {'dec': '鉴于时至今日我还能收到这样的问题：请问怎样才能上架？所以我做了一个图示——',
+ 'gender': 'female',
+ 'idnum': '9999',
+ 'image_urls': ['http://mmbiz.qpic.cn/mmbiz_jpg/ZnR0FD7Bn9jaWxL7xRlHAD5q8IiaCpF1A4BgC3ua7ibhicicot5ImokeKxMEv8WibJn6rtVbAYJjZrAdAgVu5qvdBbg/0?wx_fmt=jpeg'],
+ 'postdate': '2016-08-20',
+ 'volume': '纳兰皮条会｜第303发｜周六女生场'}
+Traceback (most recent call last):
+  File "c:\programdata\anaconda3\lib\site-packages\twisted\internet\defer.py", line 653, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "D:\nalan\nalan\pipelines.py", line 33, in process_item
+    if(item['city'].replace(' ', '').replace('\n','').replace('：','').replace(':','')!=''):
+  File "c:\programdata\anaconda3\lib\site-packages\scrapy\item.py", line 59, in __getitem__
+    return self._values[key]
+KeyError: 'city'
+2017-07-16 02:59:50 [root] INFO: 9998
+2017-07-16 02:59:50 [scrapy.core.scraper] ERROR: Error processing {'dec': '新中国成立以来最好看的脱单平台',
+ 'gender': 'female',
+ 'idnum': '9998',
+ 'image_urls': ['http://mmbiz.qpic.cn/mmbiz_jpg/ZnR0FD7Bn9jaWxL7xRlHAD5q8IiaCpF1Ajjkf7yQok062Uw88yHaear1wu2OTn8810GdFbOGDLwwm2J90mWbFvw/0?wx_fmt=jpeg'],
+ 'postdate': '2016-08-20',
+ 'volume': '纳兰皮条会｜第303发｜周六女生场'}
+Traceback (most recent call last):
+  File "c:\programdata\anaconda3\lib\site-packages\twisted\internet\defer.py", line 653, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "D:\nalan\nalan\pipelines.py", line 33, in process_item
+    if(item['city'].replace(' ', '').replace('\n','').replace('：','').replace(':','')!=''):
+  File "c:\programdata\anaconda3\lib\site-packages\scrapy\item.py", line 59, in __getitem__
+    return self._values[key]
+KeyError: 'city'
+2017-07-16 02:59:50 [root] INFO: 9997
+2017-07-16 02:59:50 [scrapy.core.scraper] ERROR: Error processing {'dec': '长摁指纹，识别图中二维码',
+ 'gender': 'female',
+ 'idnum': '9997',
+ 'image_urls': ['http://mmbiz.qpic.cn/mmbiz_jpg/ZnR0FD7Bn9jaWxL7xRlHAD5q8IiaCpF1AuAJ0d47DQwGkaKlzpyia3IjYJuhPnjpxzdCnp0mw2UM0xS1hibtLkw7g/0?wx_fmt=jpeg'],
+ 'postdate': '2016-08-20',
+ 'volume': '纳兰皮条会｜第303发｜周六女生场'}
+Traceback (most recent call last):
+  File "c:\programdata\anaconda3\lib\site-packages\twisted\internet\defer.py", line 653, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "D:\nalan\nalan\pipelines.py", line 33, in process_item
+    if(item['city'].replace(' ', '').replace('\n','').replace('：','').replace(':','')!=''):
+  File "c:\programdata\anaconda3\lib\site-packages\scrapy\item.py", line 59, in __getitem__
+    return self._values[key]
+KeyError: 'city'
+2017-07-16 02:59:50 [root] INFO: 9996
+2017-07-16 02:59:50 [scrapy.core.scraper] ERROR: Error processing {'dec': '让我为你们的故事写个开头',
+ 'gender': 'female',
+ 'idnum': '9996',
+ 'image_urls': ['http://mmbiz.qpic.cn/mmbiz_jpg/ZnR0FD7Bn9jaWxL7xRlHAD5q8IiaCpF1AePVYxsWKjc1sFibNt5YlSwUPtUnSvZVgvllWc4oaNAJOxP1KVp3q1tw/0?wx_fmt=jpeg'],
+ 'postdate': '2016-08-20',
+ 'volume': '纳兰皮条会｜第303发｜周六女生场'}
+Traceback (most recent call last):
+  File "c:\programdata\anaconda3\lib\site-packages\twisted\internet\defer.py", line 653, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "D:\nalan\nalan\pipelines.py", line 33, in process_item
+    if(item['city'].replace(' ', '').replace('\n','').replace('：','').replace(':','')!=''):
+  File "c:\programdata\anaconda3\lib\site-packages\scrapy\item.py", line 59, in __getitem__
+    return self._values[key]
+KeyError: 'city'
+2017-07-16 02:59:50 [scrapy.core.engine] INFO: Closing spider (finished)
+2017-07-16 02:59:50 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 533,
+ 'downloader/request_count': 1,
+ 'downloader/request_method_count/GET': 1,
+ 'downloader/response_bytes': 21992,
+ 'downloader/response_count': 1,
+ 'downloader/response_status_count/200': 1,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2017, 7, 15, 18, 59, 50, 735120),
+ 'log_count/ERROR': 4,
+ 'log_count/INFO': 11,
+ 'response_received_count': 1,
+ 'scheduler/dequeued': 1,
+ 'scheduler/dequeued/memory': 1,
+ 'scheduler/enqueued': 1,
+ 'scheduler/enqueued/memory': 1,
+ 'start_time': datetime.datetime(2017, 7, 15, 18, 59, 50, 405285)}
+2017-07-16 02:59:50 [scrapy.core.engine] INFO: Spider closed (finished)
+2017-07-30 23:10:20 [scrapy.utils.log] INFO: Scrapy 1.3.2 started (bot: nalan)
+2017-07-30 23:10:20 [scrapy.utils.log] INFO: Overridden settings: {'BOT_NAME': 'nalan', 'CONCURRENT_REQUESTS': 1, 'COOKIES_ENABLED': False, 'DOWNLOAD_DELAY': 1, 'DOWNLOAD_TIMEOUT': 5, 'LOG_FILE': 'scrapy.log', 'LOG_LEVEL': 'INFO', 'NEWSPIDER_MODULE': 'nalan.spiders', 'SPIDER_MODULES': ['nalan.spiders']}
+2017-07-30 23:10:20 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats']
+2017-07-30 23:10:20 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['nalan.middlewares.RandomUserAgent',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2017-07-30 23:10:20 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2017-07-30 23:10:20 [scrapy.middleware] INFO: Enabled item pipelines:
+['nalan.pipelines.NalanPipeline',
+ 'nalan.pipelines.DuplicatesPipeline',
+ 'nalan.pipelines.JsonWriterPipeline',
+ 'nalan.pipelines.personImagePipeline']
+2017-07-30 23:10:20 [scrapy.core.engine] INFO: Spider opened
+2017-07-30 23:10:20 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2017-07-30 23:10:20 [root] INFO: 1111111---深圳 职业：互联网 兴趣爱好：玩的自由，宅的彻底^_^ 求偶要求：base深圳最优/其次广州/北京/上海。你对我的态度，决定我对你的态度。 自我介绍：高冷逗逼结合体。少一点套路，多一点真诚。------------------  dicksoup  ------------------2427—微信号：1622490145 年龄：26 身高：160 城市：十堰/宁波 职业：美容行业 兴趣爱好：户外，旅行，桌球、打扮 求偶要求：五官端正，幽默、大方、有责任心，稳定的工作。自我介绍：天蝎女，没有最专一、只有更专一，讨厌谎言、讨厌欺骗、清高的忍让、犹豫地承受，酷得干脆利落，不触动底线一切都好。------------------  dicksoup  ------------------2428—微信号：ejr1991 年龄：即将25 身高：163 城市：成都 职业：部门助理 兴趣爱好：跑步，骑车（因为胖），发呆 求偶要求：理想型是高瘦的学霸，但是不满足也没关系啦，毕竟聊得来最重要。硬性要求的话，不要直男癌妈宝和太胖的。要有一点自己特别擅长或者喜欢的东西，能让我崇拜就完美辣 自我介绍：照骗，在南方的北方人，脑洞大，人比较笨。从小的梦想就是当家庭主妇，但是都蹉跎到晚婚晚育了依然没实现。觉得耍朋友也好结婚也好，最重要的是有话说，所以不想为了耍朋友而耍朋友，为了结婚而结婚，所以“觉得自己不小了该结婚了”的汉子，请不要考虑我。------------------  dicksoup  ------------------2429—微信号：cat_us 年龄：90年 身高：162cm 城市：杭州 职业：财税系统 兴趣爱好：登山、摄影、戏剧、下厨、书影音等等等等等等 求偶要求：在杭州/上海、有经济基础、能独立思考、在专业领域有进取心、带点孩子气就更加迷人了。由于本人非高妹，偏好个儿高的（175cm以上），救救孩子！ 自我介绍：可能不是第一眼美女，但您看久之后，我敢说，您就看习惯了。工作场合一本正经，生活里假不正经。注重生活品质，咖啡不搁蒜，酸奶不舔盖儿，旅游出小区，有雾。希望我们能在彼此身边继续做个孩子。不要叫我妈。------------------  dicksoup  ------------------2430—微信号：fayxie1111 年龄：89年天蝎 身高：165 城市：珠海 职业：度假区营销 兴趣爱好：读书、旅行、烹饪、犯二 求偶要求：同城、比我高点、比我懂的多一点、让我崇拜、三观合、人不渣、温和 自我介绍：我们和任何一个人相处最愉快的地方，就是我们在一起，彼此都不用改变那么多原则。我很简单，希望你也是。------------------  dicksoup  ------------------2431—微信号：flysky0930 年龄：1985年，大天秤，上升射手 身高：168cm 城市：北京市 职业：室内设计师 兴趣爱好：跑步，吃 求偶要求：同城，且175cm以上。不接受姐弟恋。 自我介绍：比较慢热的一枚。先看脸再慢慢了解吧。------------------  dicksoup  ------------------2432—微信号：wenwen872470 年龄：27 身高：160 城市：成都 职业：中学老师 兴趣爱好：旅游，摄影，画画 求偶要求：性格阳光 自我介绍：我喜欢旅游 电影 音乐 运动 跳舞。我在业余时间最大的消遣是电影。我憧憬的生活是安稳的小日子。我希望我未来的另一半最好是阳光。真心希望在这里能遇到我的那个他。------------------  dicksoup  ------------------2433—微信号：BUJIAN99 年龄：24 身高：175 城市：宁夏银川 职业：机场安检 兴趣爱好：麦霸级玩家，钢琴业余爱好者。 求偶要求：身高比我高，至于高几公分取决于心动值。孝顺阳光接地气。 自我介绍：四肢都很长的狮子座选手，外冷内热。爱生活更爱段子。------------------  dicksoup  ------------------2434—微信号：36555005年龄：31身高：160cm城市：北京职业：活动策划兴趣爱好：旅行求偶要求：比我大、没有娃、有眼缘、对我好、善良、孝顺、有担当、负责任自我介绍：我希望能有一个人.像暗夜里天空明亮的星星.照亮我的全世界...我希望能有一个人.亲口对我说.要让我变得快乐...我希望能有一个人.深情的看着我时.会说我笑起来真的又甜又美...我希望能有一个人.我可以把开心不开心的事一股脑都倾倒给他.然后他照单全收又心满意足...我希望能有这样一个人.为他的出现.我泪流满面... ------------------  dicksoup  ------------------2435—微信号：flora_2929 年龄：23 身高：158 城市：上海 职业：英语老师 兴趣爱好：旅行 潜水 跳伞 求偶要求：热爱生活 喜欢旅行 愿意探险 认真恋爱 有经济基础 自我介绍：慢热 闷骚 爱极限运动 外表跟内心极度不匹配 可以尝试来了解了解怎么个不同------------------  dicksoup  ------------------2436—微信号：WY-INA  (暗号纳兰) 年龄：90年.10 身高：167cm 城市：杭州 职业：品牌文案策划 兴趣爱好：码字(写个小故事给自己看) 电影  求偶要求：明辨是非 谦逊有礼吧，身高是高一些最好(不行的话穿平底鞋也挺舒服)，剩下的就看聊不聊的来了 自我介绍：性格属夹生慢热型，当然熟了另说。虽然是艺术院校毕业，但手已经生的停留在比画火柴人好一点的阶段了，所以尽量表提"给我画张画像"之类的话啦。------------------  dicksoup  ------------------2437—微信号：depp1595537（暗号纳兰） 年龄：25大水瓶 身高：166 城市：苏州 职业：美术设计 兴趣爱好：电影，画画，动物，自助游，摄影，李志，万青，陈升，和菜头，花花草草山川湖海 求偶要求：三观合，爱运动，不偏执，有执行力，有生活情趣，独立思考不跟风。希望你在当地较为英俊。      自我介绍：文艺不矫情，娇柔不造作。情商偶尔掉线，请多多包涵。------------------  dicksoup  ------------------2438—微信号: tinatian0908 年龄:25 身高:163cm 城市:上海 职业:硕士在读 兴趣爱好: 音乐 摄影 求偶要求: 一米八，肉肉哒。江浙沪皖包邮啊。健康阳光爱家。 自我介绍：正直善良勇敢的居家旅行必备小能手。------------------  dicksoup  ------------------2439—微信号：ariesYLW 年龄：92年 身高：168 城市：在北京工作的长沙人 职业：外企销售 兴趣爱好：因为工作原因出差较多，周末一般都去逛逛街，看看电影，不忙的时候会下厨，看看美剧日剧，每年至少旅游一次，不定期会去画室画个丙烯画。 求偶要求：180+，短发，笑起来很阳光，会下厨，轻微洁癖，性格比较成熟不鲁莽，有耐心，对待感情认真专一，不会脾气暴躁也不蛮横，大致这样吧。 自我介绍：嗯，我是一个有点情绪化的人，生性比较敏感，会照顾人，也容易觉得委屈，对喜欢的人会恨不得把自己所有的都给他，不喜欢的人，会很直接的拒绝或者逃避。喜欢尝试新鲜事物，对新的事物一直抱有好奇心，算是一个比较有趣的人吧。------------------  dicksoup  ------------------2440—微信号：Rehcsy2 年龄：92年 身高：165 城市：芜湖 职业：正当职业（哈哈哈） 兴趣爱好：做饭 看书 心情不好看电影 求偶要求：善良 成熟 温柔 幽默 （然后好看！耐看也很重要） 自我介绍：短发 偶尔高冷有趣可爱（其实是话少水瓶座傻比）脾气好 记忆力差 江湖没什么 江湖里有我 我给你唱歌儿；）接下来请欣赏一条我为大家精心挑选的有情有趣有情趣的广告👇一直以来，我只负责帮你们走好第一步——相 遇是时候介入你们的第二步了，那就是啪！啪！！啪！！！我的长期合作伙伴，致力于提升人类性福指数的国际知名品牌杜蕾斯前天发布了一款黑科技产品如下图所示👇＊这是甲方提供的素材，笔者并没有亲自使用...这是什么东西呢？从小讲文明懂礼貌的我简直无法用语言来描述...请看大屏幕——👇👇👇（在公众场合请注意遮挡）这款自带马赛克的产品有一个肥肠拉轰的名字焕觉C系列·远程遥控爱侣共震按摩器简称杜！杜！C！型！震！动！器！同床时可以男女共震异地时可以手机操控就算是单身狗也可以放在床头柜上当！闹！钟！是不是已经饥渴难耐了？点击阅读原文就可以购买这款划时代的高科技产品了，祝大家性福！
+                
+2017-07-30 23:10:20 [root] INFO: 2426
+2017-07-30 23:10:21 [scrapy.core.engine] INFO: Closing spider (finished)
+2017-07-30 23:10:21 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 511,
+ 'downloader/request_count': 1,
+ 'downloader/request_method_count/GET': 1,
+ 'downloader/response_bytes': 134172,
+ 'downloader/response_count': 1,
+ 'downloader/response_status_count/200': 1,
+ 'file_count': 1,
+ 'file_status_count/uptodate': 1,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2017, 7, 30, 15, 10, 21, 75065),
+ 'item_scraped_count': 1,
+ 'log_count/INFO': 9,
+ 'response_received_count': 1,
+ 'scheduler/dequeued': 1,
+ 'scheduler/dequeued/memory': 1,
+ 'scheduler/enqueued': 1,
+ 'scheduler/enqueued/memory': 1,
+ 'start_time': datetime.datetime(2017, 7, 30, 15, 10, 20, 662759)}
+2017-07-30 23:10:21 [scrapy.core.engine] INFO: Spider closed (finished)
+2017-07-30 23:10:52 [scrapy.utils.log] INFO: Scrapy 1.3.2 started (bot: nalan)
+2017-07-30 23:10:52 [scrapy.utils.log] INFO: Overridden settings: {'BOT_NAME': 'nalan', 'CONCURRENT_REQUESTS': 1, 'COOKIES_ENABLED': False, 'DOWNLOAD_DELAY': 1, 'DOWNLOAD_TIMEOUT': 5, 'LOG_FILE': 'scrapy.log', 'LOG_LEVEL': 'INFO', 'NEWSPIDER_MODULE': 'nalan.spiders', 'SPIDER_MODULES': ['nalan.spiders']}
+2017-07-30 23:10:52 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats']
+2017-07-30 23:10:52 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['nalan.middlewares.RandomUserAgent',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2017-07-30 23:10:52 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2017-07-30 23:10:52 [scrapy.middleware] INFO: Enabled item pipelines:
+['nalan.pipelines.NalanPipeline',
+ 'nalan.pipelines.DuplicatesPipeline',
+ 'nalan.pipelines.JsonWriterPipeline',
+ 'nalan.pipelines.personImagePipeline']
+2017-07-30 23:10:52 [scrapy.core.engine] INFO: Spider opened
+2017-07-30 23:10:52 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2017-07-30 23:10:52 [root] INFO: 1111111---深圳 职业：互联网 兴趣爱好：玩的自由，宅的彻底^_^ 求偶要求：base深圳最优/其次广州/北京/上海。你对我的态度，决定我对你的态度。 自我介绍：高冷逗逼结合体。少一点套路，多一点真诚。------------------  dicksoup  ------------------2427—微信号：1622490145 年龄：26 身高：160 城市：十堰/宁波 职业：美容行业 兴趣爱好：户外，旅行，桌球、打扮 求偶要求：五官端正，幽默、大方、有责任心，稳定的工作。自我介绍：天蝎女，没有最专一、只有更专一，讨厌谎言、讨厌欺骗、清高的忍让、犹豫地承受，酷得干脆利落，不触动底线一切都好。------------------  dicksoup  ------------------2428—微信号：ejr1991 年龄：即将25 身高：163 城市：成都 职业：部门助理 兴趣爱好：跑步，骑车（因为胖），发呆 求偶要求：理想型是高瘦的学霸，但是不满足也没关系啦，毕竟聊得来最重要。硬性要求的话，不要直男癌妈宝和太胖的。要有一点自己特别擅长或者喜欢的东西，能让我崇拜就完美辣 自我介绍：照骗，在南方的北方人，脑洞大，人比较笨。从小的梦想就是当家庭主妇，但是都蹉跎到晚婚晚育了依然没实现。觉得耍朋友也好结婚也好，最重要的是有话说，所以不想为了耍朋友而耍朋友，为了结婚而结婚，所以“觉得自己不小了该结婚了”的汉子，请不要考虑我。------------------  dicksoup  ------------------2429—微信号：cat_us 年龄：90年 身高：162cm 城市：杭州 职业：财税系统 兴趣爱好：登山、摄影、戏剧、下厨、书影音等等等等等等 求偶要求：在杭州/上海、有经济基础、能独立思考、在专业领域有进取心、带点孩子气就更加迷人了。由于本人非高妹，偏好个儿高的（175cm以上），救救孩子！ 自我介绍：可能不是第一眼美女，但您看久之后，我敢说，您就看习惯了。工作场合一本正经，生活里假不正经。注重生活品质，咖啡不搁蒜，酸奶不舔盖儿，旅游出小区，有雾。希望我们能在彼此身边继续做个孩子。不要叫我妈。------------------  dicksoup  ------------------2430—微信号：fayxie1111 年龄：89年天蝎 身高：165 城市：珠海 职业：度假区营销 兴趣爱好：读书、旅行、烹饪、犯二 求偶要求：同城、比我高点、比我懂的多一点、让我崇拜、三观合、人不渣、温和 自我介绍：我们和任何一个人相处最愉快的地方，就是我们在一起，彼此都不用改变那么多原则。我很简单，希望你也是。------------------  dicksoup  ------------------2431—微信号：flysky0930 年龄：1985年，大天秤，上升射手 身高：168cm 城市：北京市 职业：室内设计师 兴趣爱好：跑步，吃 求偶要求：同城，且175cm以上。不接受姐弟恋。 自我介绍：比较慢热的一枚。先看脸再慢慢了解吧。------------------  dicksoup  ------------------2432—微信号：wenwen872470 年龄：27 身高：160 城市：成都 职业：中学老师 兴趣爱好：旅游，摄影，画画 求偶要求：性格阳光 自我介绍：我喜欢旅游 电影 音乐 运动 跳舞。我在业余时间最大的消遣是电影。我憧憬的生活是安稳的小日子。我希望我未来的另一半最好是阳光。真心希望在这里能遇到我的那个他。------------------  dicksoup  ------------------2433—微信号：BUJIAN99 年龄：24 身高：175 城市：宁夏银川 职业：机场安检 兴趣爱好：麦霸级玩家，钢琴业余爱好者。 求偶要求：身高比我高，至于高几公分取决于心动值。孝顺阳光接地气。 自我介绍：四肢都很长的狮子座选手，外冷内热。爱生活更爱段子。------------------  dicksoup  ------------------2434—微信号：36555005年龄：31身高：160cm城市：北京职业：活动策划兴趣爱好：旅行求偶要求：比我大、没有娃、有眼缘、对我好、善良、孝顺、有担当、负责任自我介绍：我希望能有一个人.像暗夜里天空明亮的星星.照亮我的全世界...我希望能有一个人.亲口对我说.要让我变得快乐...我希望能有一个人.深情的看着我时.会说我笑起来真的又甜又美...我希望能有一个人.我可以把开心不开心的事一股脑都倾倒给他.然后他照单全收又心满意足...我希望能有这样一个人.为他的出现.我泪流满面... ------------------  dicksoup  ------------------2435—微信号：flora_2929 年龄：23 身高：158 城市：上海 职业：英语老师 兴趣爱好：旅行 潜水 跳伞 求偶要求：热爱生活 喜欢旅行 愿意探险 认真恋爱 有经济基础 自我介绍：慢热 闷骚 爱极限运动 外表跟内心极度不匹配 可以尝试来了解了解怎么个不同------------------  dicksoup  ------------------2436—微信号：WY-INA  (暗号纳兰) 年龄：90年.10 身高：167cm 城市：杭州 职业：品牌文案策划 兴趣爱好：码字(写个小故事给自己看) 电影  求偶要求：明辨是非 谦逊有礼吧，身高是高一些最好(不行的话穿平底鞋也挺舒服)，剩下的就看聊不聊的来了 自我介绍：性格属夹生慢热型，当然熟了另说。虽然是艺术院校毕业，但手已经生的停留在比画火柴人好一点的阶段了，所以尽量表提"给我画张画像"之类的话啦。------------------  dicksoup  ------------------2437—微信号：depp1595537（暗号纳兰） 年龄：25大水瓶 身高：166 城市：苏州 职业：美术设计 兴趣爱好：电影，画画，动物，自助游，摄影，李志，万青，陈升，和菜头，花花草草山川湖海 求偶要求：三观合，爱运动，不偏执，有执行力，有生活情趣，独立思考不跟风。希望你在当地较为英俊。      自我介绍：文艺不矫情，娇柔不造作。情商偶尔掉线，请多多包涵。------------------  dicksoup  ------------------2438—微信号: tinatian0908 年龄:25 身高:163cm 城市:上海 职业:硕士在读 兴趣爱好: 音乐 摄影 求偶要求: 一米八，肉肉哒。江浙沪皖包邮啊。健康阳光爱家。 自我介绍：正直善良勇敢的居家旅行必备小能手。------------------  dicksoup  ------------------2439—微信号：ariesYLW 年龄：92年 身高：168 城市：在北京工作的长沙人 职业：外企销售 兴趣爱好：因为工作原因出差较多，周末一般都去逛逛街，看看电影，不忙的时候会下厨，看看美剧日剧，每年至少旅游一次，不定期会去画室画个丙烯画。 求偶要求：180+，短发，笑起来很阳光，会下厨，轻微洁癖，性格比较成熟不鲁莽，有耐心，对待感情认真专一，不会脾气暴躁也不蛮横，大致这样吧。 自我介绍：嗯，我是一个有点情绪化的人，生性比较敏感，会照顾人，也容易觉得委屈，对喜欢的人会恨不得把自己所有的都给他，不喜欢的人，会很直接的拒绝或者逃避。喜欢尝试新鲜事物，对新的事物一直抱有好奇心，算是一个比较有趣的人吧。------------------  dicksoup  ------------------2440—微信号：Rehcsy2 年龄：92年 身高：165 城市：芜湖 职业：正当职业（哈哈哈） 兴趣爱好：做饭 看书 心情不好看电影 求偶要求：善良 成熟 温柔 幽默 （然后好看！耐看也很重要） 自我介绍：短发 偶尔高冷有趣可爱（其实是话少水瓶座傻比）脾气好 记忆力差 江湖没什么 江湖里有我 我给你唱歌儿；）接下来请欣赏一条我为大家精心挑选的有情有趣有情趣的广告👇一直以来，我只负责帮你们走好第一步——相 遇是时候介入你们的第二步了，那就是啪！啪！！啪！！！我的长期合作伙伴，致力于提升人类性福指数的国际知名品牌杜蕾斯前天发布了一款黑科技产品如下图所示👇＊这是甲方提供的素材，笔者并没有亲自使用...这是什么东西呢？从小讲文明懂礼貌的我简直无法用语言来描述...请看大屏幕——👇👇👇（在公众场合请注意遮挡）这款自带马赛克的产品有一个肥肠拉轰的名字焕觉C系列·远程遥控爱侣共震按摩器简称杜！杜！C！型！震！动！器！同床时可以男女共震异地时可以手机操控就算是单身狗也可以放在床头柜上当！闹！钟！是不是已经饥渴难耐了？点击阅读原文就可以购买这款划时代的高科技产品了，祝大家性福！
+                
+2017-07-30 23:10:52 [root] INFO: 2426
+2017-07-30 23:10:53 [scrapy.core.engine] INFO: Closing spider (finished)
+2017-07-30 23:10:53 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 933,
+ 'downloader/request_count': 2,
+ 'downloader/request_method_count/GET': 2,
+ 'downloader/response_bytes': 171107,
+ 'downloader/response_count': 2,
+ 'downloader/response_status_count/200': 2,
+ 'file_count': 1,
+ 'file_status_count/downloaded': 1,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2017, 7, 30, 15, 10, 53, 53029),
+ 'item_scraped_count': 1,
+ 'log_count/INFO': 9,
+ 'response_received_count': 2,
+ 'scheduler/dequeued': 1,
+ 'scheduler/dequeued/memory': 1,
+ 'scheduler/enqueued': 1,
+ 'scheduler/enqueued/memory': 1,
+ 'start_time': datetime.datetime(2017, 7, 30, 15, 10, 52, 424595)}
+2017-07-30 23:10:53 [scrapy.core.engine] INFO: Spider closed (finished)
